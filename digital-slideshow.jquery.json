@@ -1,0 +1,28 @@
+{
+    "name": "digital-slideshow",
+    "title": "Digital Slideshow",
+    "description": "Digital Slideshow (jQuery plugin).",
+    "keywords": [
+        "digital",
+        "slideshow",
+        "slider"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Tomáš Mahrík",
+        "url": "https://github.com/maho125/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/maho125/digital-slideshow/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/maho125/digital-slideshow/issues",
+    "homepage": "http://plugins.beedigital.sk/digital-slideshow/",
+    "docs": "http://plugins.beedigital.sk/digital-slideshow/",
+    "download": "https://github.com/maho125/digital-slideshow/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>     
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tomáš Mahrík | BEE DIGITAL,s.r.o, info[at]beedigital.sk" />
+    
+    <title>Digital Slideshow | BEE DIGITAL</title>
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" media="screen" href="css/slideshow.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="css/css.css" type="text/css" />  
+
+    <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="js/slideshow-1.0.0.js"></script>
+    
+    <script type="text/javascript">
+    
+      $(document).ready(function() 
+      {
+        //first example of slideshow
+        slideshow({
+                                      rootElement: 'slideshow2',
+                                      autoplay: true
+                                   });  
+        
+        //second example of slideshow with code in instructions
+        slideshow({
+                                      rootElement: 'slideshow',                                     
+                                      w: 800,
+                                      h: 300,
+                                      autoplay: true
+                                   });  
+      
+      });
+      
+    </script>
+
+</head> 
+  
+<body>
+
+<div class="wrapper">
+
+<div class="container">
+<h1>Digital Slideshow (jQuery Plugin)</h1>
+
+<p>
+  Nowadays you can find on the Internet many slideshow plugins using <a href="http://www.jquery.com" target="_blank">jQuery</a> or other libraries based on Javascript. Some are better some are worse but in some
+  specific cases is better create own solution (development of own solution takes much more time but usually it's much more easier to extend plugin and during development process you can learn many new things). 
+  For landing page for our next mobile project <a href="http://www.teachmeapps.net" target="_blank">Teach Me Apps</a> I developed easy slideshow plugin using jQuery library which I gave code name Digital Slideshow.
+</p>
+
+<p>  
+ I decided to share with you full code of this plugin. You can plugin to extend and also use this plugin or code snippet in your opensource and commercial projects without any restrictions. If you like
+  this plugin please share this page with other or support us with your like or tweet on our <a href="http://blog.beedigital.sk" target="_blank" title="Blog | BEE DIGITAL">BLOG</a> or <a href="http://www.beedigital.sk" target="_blank" title="BEE DIGITAL official website">Official Website</a>. 
+</p>
+
+<h2 class="center">Download last version of Digital Slideshow</h2>
+
+<p class="center">
+   <div class="download">
+   <strong>Digital Slideshow</strong><br/>
+   <a href="https://github.com/maho125/digital-slideshow/archive/master.zip">Download</a>
+   </div>
+</p>
+
+<h2 class="center">Example of Digital Slideshow:</h2>
+
+</div>
+
+<div id="slideshow2">
+     <div class="slides">
+        <img src="slider/5.jpg" alt="teach me" data-label="Teach Me Apps" data-text="Multiplatform Educational Apps from BEE DIGITAL" />
+        <img src="slider/6.jpg" alt="volleyball island" data-label="Volleyball Island" data-text="Beach volleyball game for iPad, Blackberry PlayBook, Facebook" />
+        <img src="slider/7.jpg" alt="test" data-label="BEE DIGITAL | Blog" data-text="Offical blog from BEE DIGITAL" />
+        <img src="slider/8.jpg" alt="test" data-label="BEE DIGITAL | Official Website" data-text="Official website of BEE DIGITAL" />
+        <div class="description"></div>
+        <div class="preloader"></div>
+     </div>   
+     <div class="navigation"></div>
+</div>
+
+<div class="container">
+   <br/>
+   <h2 class="center">How to use: Step by step instructions</h2>
+   <p>
+      <hr/>
+      <strong>1.</strong> Download and unzip the latest version of <strong>Digital Slideshow</strong> from <a href="https://github.com/maho125/digital-slideshow/archive/master.zip">GitHub</a>. You can choose from <strong>uncompressed</strong> and <strong>minified</strong> version.
+      <hr/>
+      
+      <strong>2.</strong> Look inside the <strong>js</strong> folder where you will find <strong>jquery-x.x.x.min.js</strong> and <strong>slideshow-x.x.x.js</strong>. Copy this folder with this 2 files to
+      root of your server (use same file hierarchy otherwise you will have to edit file paths) and put this code snippet to header of your main HTML page. jQuery library
+      have to be loaded first before <strong>slideshow-x.x.x.js</strong>.
+      <code>
+      &lt;script type="text/javascript" src="js/jquery-2.0.2.min.js"&gt;&lt;/script&gt;
+      <br/>
+      &lt;script type="text/javascript" src="js/slideshow-1.0.0.js"&gt;&lt;/script&gt;
+      </code>
+
+      <hr/>
+      <strong>3.</strong> Look inside folder <strong>css</strong> where you will find <strong>slideshow.css</strong>. Copy this folder to root of your server (use same file hierarchy otherwise you will have to edit file paths) and put this code snippet to header of your HTML page.  
+      <code>
+      &lt;link rel="stylesheet" media="screen" href="css/slideshow.css" type="text/css" /&gt;
+      </code>
+      
+      <hr/>
+      <strong>4.</strong> Look inside folder <strong>images/default/</strong> where you find files <strong>arrow_left.png</strong>, <strong>arrow_right.png</strong>, <strong>nav_active.png</strong>, <strong>nav_unactive.png</strong> and ,<strong>transparent.png</strong>. These files
+      are used in stylesheet file <strong>slideshow.css</strong>. By default <strong>slideshow.css</strong> will look for these images in folder called <strong>images/default/</strong>. Copy this folder to root of your server (use same file hierarchy otherwise you will have to edit file paths).
+      
+      <hr/>
+      <strong>5.</strong> Put this HTML code snippet to body of main HTML page. Every image tag contains special attributes <strong>data-label</strong> and <strong>data-text</strong> where you can define label and description text if you want show description box for slide.
+      <code>
+      &lt;div id="slideshow"&gt;<br/>
+      &nbsp;&nbsp;&lt;div class="slides"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="slider/1.png" alt="image1" data-label="Slide Label 1" data-text="Slide Text 1" /&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="slider/2.png" alt="image2" data-label="" data-text="" /&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="slider/3.png" alt="image3" data-label="Slide Label 3" data-text="Slide Text 3" /&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="slider/4.png" alt="image4" data-label="Slide Label 4" data-text="Slide Text 4" /&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="description">&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="preloader"&gt;&lt;/div&gt;<br/>
+      &nbsp;&nbsp;&lt;/div&gt;<br/>   
+      &nbsp;&nbsp;&lt;div class="navigation"&gt;&lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+      </code>
+      
+      <hr/>
+      <strong>6.</strong> And last step we have to initialize slideshow plugin. So put this javascript code snippet to header of HTML page:
+      <code>
+      &lt;script type="text/javascript"&gt;<br/>
+      <br/>
+      &nbsp;&nbsp;$(document).ready(function()<br/> 
+      &nbsp;&nbsp;{<br/>
+      <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;slideshow({<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootElement: 'slideshow', //identificator of slideshow HTML container<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w: 800, //width of of slideshow HTML container in px<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h: 300, //height of of slideshow HTML container in px<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoplay: true //turn on autoplay mode<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;});<br/> 
+      <br/>  
+      &nbsp;&nbsp;});<br/>
+      <br/>
+      &lt;/script&gt;
+      </code>
+      
+      <hr/>
+      <strong>7.</strong> And here is the result :-)  
+   </p>
+  
+
+  
+</div>
+
+<div id="slideshow">
+     <div class="slides">
+        <img src="slider/1.png" alt="image1" data-label="Slide Label 1" data-text="Slide Text 1" />
+        <img src="slider/2.png" alt="image2" data-label="" data-text="" />
+        <img src="slider/3.png" alt="image3" data-label="Slide Label 3" data-text="Slide Text 3" />
+        <img src="slider/4.png" alt="image4" data-label="Slide Label 4" data-text="Slide Text 4" />
+        <div class="description"></div>
+        <div class="preloader"></div>
+     </div>   
+     <div class="navigation"></div>
+</div>
+<br/><br/>
+<div class="container">
+
+  <h2>Bugs</h2>
+  <p>If you find a bug, create an issue on <a href="https://github.com/maho125/digital-slideshow" target="_blank">GitHub</a>. Include your operating system and browser version along with detailed steps to reproduce the bug.</p>
+
+  <h2>Feature requests</h2>
+
+  <p>If you want a feature added, please create an issue on <a href="https://github.com/maho125/digital-slideshow" target="_blank">GitHub</a>. Someone else or I might be able to help out. No guarantees.</p>
+
+  <h2>Support questions</h2>
+  <p>If you have a question that is not a bug or a feature request, your best chance of getting an answer is contact me on <strong>hello[at]beedigital.sk</strong>.</p>
+
+  <h2>Version history</h2>
+  <ul>
+    <li>v1.0.0 - 29.7.2013, first version of Digital Slideshow</li>
+  </ul>
+  
+  <p class="center">&copy; 2013 <a href="https://twitter.com/maho125" target="_blank">Tomáš Mahrík</a> | <a href="http://blog.beedigital.sk" target="_blank">BLOG</a> | <a href="http://www.beedigital.sk" target="_blank">BEE DIGITAL</a></p>
+  <br/>
+</div>
+
+</div>
+
+</body>
+</html>
+
+
